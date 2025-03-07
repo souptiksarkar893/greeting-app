@@ -8,7 +8,7 @@ function GreetingForm() {
   const handleGreeting = async () => {
     try {
       const response = await axios.get(
-        `https://greeting-app-62iy.onrender.com/api/greet?name=${name}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/greet?name=${name}`
       );
       setMessage(response.data.message || response.data.error);
     } catch (error) {
